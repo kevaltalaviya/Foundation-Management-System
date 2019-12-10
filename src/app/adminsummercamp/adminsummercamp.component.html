@@ -1,0 +1,71 @@
+<app-adminheader></app-adminheader>
+
+<fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color: #032559;color:white;">
+        <h3 style="text-align: center" class="formheadings">
+              <b> Upcoming Summer Camps...   </b>  
+            </h3>
+    
+        </fieldset>
+    <hr>
+    <div class="container" >
+        <div class="center">
+            <a routerLink="/adminaddsummercamp" routerLinkActive="active">
+                 <button  type="button" class="btn btn-success"style="margin: 0 35%" id="btndonation">ADD CAMP</button>
+                </a>
+        </div>
+      </div>
+        <br><div style="text-align: center"><h1>CAMP DETAILS</h1></div><hr>
+        <div *ngFor="let summerCamp of summerCamps,even as e">
+          <div *ngIf="e; then thenblock else elseblock"></div>
+        <ng-template #thenblock>
+          <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 clo-lg-6">
+                <img src="{{summerCamp.photo}}" class="center" style="height:100%;width:100%;margin-top: 10px;">
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 clo-lg-6">
+                  <fieldset style="background-color:pink;border:solid 3px">
+                <b> <h1 style="text-align: center;"> {{summerCamp.camp_title }}</h1></b>
+                     <h4><b>Start Date :</b>{{ summerCamp.start_date }} </h4>
+                     <h4><b>End Date:</b>{{ summerCamp.end_date }} </h4>
+                     <h4><b>Fee :</b>{{ summerCamp.fee_amount }}</h4>
+                     <h4><b>Max Seat :</b>{{ summerCamp.available_seat }}</h4>
+                     <h4><b>Min Age :</b>{{ summerCamp.min_age }}</h4>
+                     <h4><b>Max Age :</b>{{ summerCamp.max_age }}</h4>
+                     <h4><b>Last Date Of Registration :</b>{{ summerCamp.last_date_to_reg }}</h4>
+                     <a class="nav-link" class="btn btn-success" [routerLink]="['/adminsummercamplist/get',summerCamp.camp_title]" style="margin-left:40%">Show Registration</a>
+                    <br/><br/>
+                    </fieldset>
+              </div>
+          </div>
+          </div>
+          <br/>
+          <hr/>
+          </ng-template>
+          <ng-template #elseblock>
+              <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 clo-lg-6">
+                        <fieldset style="background-color:pink;border:solid 3px">
+                      <b> <h1 style="text-align: center;"> {{summerCamp.camp_title }}</h1></b>
+                           <h4><b>Start Date :</b>{{ summerCamp.start_date }} </h4>
+                           <h4><b>End Date:</b>{{ summerCamp.end_date }} </h4>
+                           <h4><b>Fee :</b>{{ summerCamp.fee_amount }}</h4>
+                           <h4><b>Max Seat :</b>{{ summerCamp.available_seat }}</h4>
+                           <h4><b>Min Age :</b>{{ summerCamp.min_age }}</h4>
+                           <h4><b>Max Age :</b>{{ summerCamp.max_age }}</h4>
+                           <h4><b>Last Date Of Registration :</b>{{ summerCamp.last_date_to_reg }}</h4>
+                           <a class="nav-link" class="btn btn-success" [routerLink]="['/adminsummercamplist/get',summerCamp.camp_title]" style="margin-left:40%">Show Registration</a>
+                          <br/><br/>
+                          </fieldset>
+                    </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 clo-lg-6">
+                      <img src="{{summerCamp.photo}}" class="center" style="height:100%;width:100%;margin-top: 10px;">
+                    </div>
+              </div>
+              </div>
+              <br/>
+              <hr/>
+              </ng-template>
+          <br>
+        </div>

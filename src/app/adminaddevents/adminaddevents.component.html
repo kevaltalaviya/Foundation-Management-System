@@ -1,0 +1,42 @@
+<app-adminheader></app-adminheader>
+<fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color: #032559;color:white;">
+    <h3 style="text-align: center" class="formheadings">
+          <b>  Enter Data of EVENT   </b>  
+        </h3>
+
+    </fieldset>
+<hr>
+<div class="container" >
+    <form [formGroup]="bloodCampForm" novalidate>
+            <table class="table table-bordered table-striped">
+                    <tr>
+            
+                        <th>Fields</th>
+                        <th>Data</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>Event Name</td>
+                        <td><input type="text" class="form-control" formControlName="camp_title" #camp_title/></td>
+                    </tr>
+                    <tr>
+                        <td>Date</td>
+                        <td><input type="date" class="form-control" formControlName="camp_date" #camp_date/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Address</td>
+                        <td>  <textarea class="form-control" rows="3" formControlName="camp_address" #camp_address></textarea></td>
+                        
+                    </tr>
+                </table>
+                <div class="form-group">
+                        <button (click)="addCamp(camp_title.value, camp_date.value,camp_address.value)"
+                            [disabled]="bloodCampForm.pristine || bloodCampForm.invalid" 
+                            class="btn btn-success"style="margin: 0 40%" id="btndonation">
+                            Add blood Camp
+                         </button>
+                    </div>
+                </form>
+</div>
+<br><br>

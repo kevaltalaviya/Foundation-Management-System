@@ -1,0 +1,33 @@
+<app-adminheader></app-adminheader>
+
+<br>
+        <fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color: #032559;color:white;">
+		    <h3 style="text-align: center" class="formheadings">
+              <b>  list of Applicants of {{campTitle}} Camp </b>  
+            </h3>
+  
+        </fieldset>
+	<hr>
+	<div class="container" >
+		<table class="table table-bordered table-striped">
+			<tr>
+
+				
+				<th>Name</th>
+				<th>email</th>
+				<th>mobile</th>
+				<th>Age</th>
+				<th>Gender</th>
+			</tr>
+			<tr *ngFor="let list of summerCampList">
+                <td>{{list.firstname}} {{list.lastname}}</td>
+                <td>{{list.email}}</td>
+                <td>{{list.mobile_no}}</td>
+                <td>{{list.age}}</td>
+                <td>{{list.gender}}</td>
+				
+			</tr>
+			
+			
+		</table>
+		

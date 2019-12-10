@@ -1,0 +1,64 @@
+<app-header></app-header>
+<fieldset style="border: 2px groove;margin: 0 5%;border-radius: 5px;">
+		<div class="formDiv">
+			<fieldset style="background-color: #032559;border-radius: 5px;padding-top: 4px;color:white;"><h3 style="text-align: center" class="formheadings" > <b>Preliminary Application Form For Summercamp Registration</b> 
+			</h3></fieldset>
+            <br>
+		</div>
+	<form [formGroup]="summerCampRegisterForm" novalidate>
+		<h1 style="text-align: center;">{{title}}	</h1>
+		<div class="container form-group">
+			<div class="row">
+				<div class="col">
+					First Name :<span style="color:#ff0000">*</span>
+					<input style="border: 2px groove;border-radius: 5px;" class="inputfields" class="form-control" type="text" formControlName="firstname" #firstname></div>
+					<div class="col">
+						Middle Name :<span style="color:#ff0000">*</span>
+						<input style="border: 2px groove;border-radius: 5px;" class="inputfields" class="form-control" type="text" formControlName="middlename" #middlename></div>
+					
+					<div class="col">
+					Last Name :<span style="color:#ff0000">*</span>
+					<input style="border: 2px groove;border-radius: 5px;" class="inputfields" class="form-control" type="text" formControlName="lastname" #lastname></div><br/>
+			</div>
+		</div>
+		<br>
+			<div class="container form-group">
+				<div class="row">
+						<div class="col">
+							E-mail:<span style="color:#ff0000">*</span>
+							<input style="border: 2px groove;border-radius: 5px;" placeholder="abc@xyz.com" class="inputfields" type="email" class="form-control" formControlName="email" #email></div>
+								<div class="col">
+									Age:<span style="color:#ff0000">*</span>
+									<input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="text" class="form-control" formControlName="age" #age></div>
+				</div>
+			</div>
+		<br>
+		<div class="container form-group">
+			<div class="row">
+				<div class="col">
+					Gender:<span style="color:#ff0000">*</span>
+					<div><input type="radio"  formControlName="gender" #gender value="male" checked> Male
+					<input style="margin-left:10%"type="radio" formControlName="gender" #gender value="female"> Female<br></div></div>
+			<div class="col">
+					Mobile No. <span style="color:#ff0000">*</span>
+					<input style="border: 2px groove;border-radius: 5px;"  minlength="10" maxlength="10" class="inputfields" type="text" class="form-control" formControlName="mobile_no" #mobile_no/></div>
+				
+			</div>
+		    </div>
+		<br/>
+
+	<br>
+	<button (click)="addsummercampregister(firstname.value, middlename.value, lastname.value,email.value,
+	age.value,gender.value,mobile_no.value)"
+	[disabled]="summerCampRegisterForm.pristine || summerCampRegisterForm.invalid" 
+	class="btn btn-success" style="margin: 0 45%" id="btndonation">
+	Apply			 
+	</button>
+	<br>
+	<br>
+	</form>
+</fieldset>
+		
+	<br>
+	<hr>
+	<app-footer></app-footer>

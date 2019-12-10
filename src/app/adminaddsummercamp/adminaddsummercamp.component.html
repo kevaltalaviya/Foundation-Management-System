@@ -1,0 +1,76 @@
+<app-adminheader></app-adminheader>
+
+    <fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color: #032559;color:white;">
+        <h3 style="text-align: center" class="formheadings">
+              <b>  Enter Data of Camp   </b>  
+            </h3>
+    
+        </fieldset>
+    <hr>
+    <form [formGroup]="summerCampForm" novalidate>
+        <div class="container form-group" >
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Fields</th>
+                    <th>Data</th>
+                </tr>
+                <tr>
+                    <td>Camp Title</td>
+                    <td><input type="text" class="form-control" formControlName="camp_title" #camp_title/></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><textarea name="Description" class="form-control" formControlName="description" #description></textarea></td>
+                </tr>
+                <tr>
+                    <td>Start Date</td>
+                    <td><input type="date" class="form-control" formControlName="start_date" #start_date/></td>
+                </tr>
+                
+                <tr>
+                        <td>End Date</td>
+                        <td><input type="date" class="form-control" formControlName="end_date" #end_date/></td>
+                </tr>
+                <tr>
+                        <td>Fee Amount</td>
+                        <td><input type="number" min="0" class="form-control" formControlName="fee_amount" #fee_amount/></td>
+                </tr>
+    
+                <tr>
+                        <td>Max No of seats</td>
+                        <td><input type="number" min="0" class="form-control" formControlName="max_seat" #max_seat/></td>
+                </tr>
+                <tr>
+                    <td>Min Age</td>
+                    <td><input type="number" min="0" class="form-control" formControlName="min_age" #min_age/></td>
+                </tr>
+                <tr>
+                    <td>Max Age</td>
+                    <td><input type="number" min="0" class="form-control" formControlName="max_age" #max_age/></td>
+                </tr>
+                <tr>
+                    <td>Last Date to Register</td>
+                    <td><input type="date" class="form-control" formControlName="last_date_to_reg" #last_date_to_reg/></td>
+                </tr>
+                <tr>
+                    <td>
+                        File to upload Image
+                    </td>
+                    <td>
+                        <img src="{{imgurl}}"  style="width: 250px;height: 200px;">
+                        <input type="file" (change)="handleFileInput($event.target.files)" formControlName="photo" #photo/>
+                    </td>
+                </tr>
+            </table>
+            
+            <hr>
+            <div class="form-group">
+                <button (click)="addSummer(camp_title.value, description.value, start_date.value,end_date.value,
+                fee_amount.value,max_seat.value,max_seat.value,min_age.value,max_age.value,last_date_to_reg.value)"
+                    [disabled]="summerCampForm.pristine || summerCampForm.invalid" 
+                    class="btn btn-success" style="margin: 0 40%" id="btndonation">
+                    Add Summer Camp
+                 </button>
+            </div>
+        </div>
+    </form>

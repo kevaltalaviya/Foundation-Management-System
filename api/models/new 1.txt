@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="scholarship">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="firstname" type="xs:string"/>
+      <xs:element name="middlename" type="xs:string"/>
+      <xs:element name="lastname" type="xs:string"/>
+	  <xs:element name="email" type="xs:string"/>
+      <xs:element name="mobile_no" type="xs:number"/>
+      <xs:element name="gender" type="xs:string"/>
+      <xs:element name="dob" type="xs:date"/>
+      <xs:element name="pincode" type="xs:number"/>
+      <xs:element name="city" type="xs:string"/>
+      <xs:element name="bank_name" type="xs:string"/>
+      <xs:element name="account_no" type="xs:number"/>
+      <xs:element name="IFSC_no" type="xs:number"/>
+      <xs:element name="percentage" type="xs:number"/>
+	  <xs:element name="marksheet" type="xs:string"/>
+      <xs:element name="approve" type="xs:Boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+<xs:element name="gender">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="male|female"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+<xs:element name="password">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:minLength value="10"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:element>
+</xs:schema>

@@ -1,0 +1,21 @@
+<app-header></app-header>
+<br><div style="text-align: center"><h1>CAMPAIGN DETAILS</h1></div><hr>
+<div *ngFor="let bloodCamp of bloodCamps">
+  <div class="container" style="background-color: grey;">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+          <fieldset style="background-color:pink;">
+
+        <b> <h1 style="text-align: center;"> {{ bloodCamp.camp_title }}</h1></b><br/>
+             <h4 style="text-align: center;"><b>Camp Date :</b>{{ bloodCamp.camp_date }} </h4>
+             <h4 style="text-align: center;"><b>Camp Address :</b> {{ bloodCamp.camp_address }}</h4>
+            </fieldset>
+
+      </div>
+  </div>
+  </div>
+  <br>
+  <hr/>
+</div>
+
+<app-footer></app-footer>

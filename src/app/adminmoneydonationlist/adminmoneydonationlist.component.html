@@ -1,0 +1,20 @@
+<app-adminheader></app-adminheader>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Mobile No.</th>
+        <th>Email</th>
+        <th>Amount</th>
+    </tr>
+    </thead>
+        <tr *ngFor="let moneyDonation of moneyDonations">
+            <td>{{ moneyDonation.firstname }}</td>
+            <td>{{ moneyDonation.lastname }}</td>
+            <td>{{ moneyDonation.mobile_no }}</td>
+            <td>{{ moneyDonation.email}}</td>
+            <td>{{ moneyDonation.amount }}</td>
+        </tr>
+  </table>

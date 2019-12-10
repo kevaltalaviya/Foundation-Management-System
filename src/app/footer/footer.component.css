@@ -1,0 +1,76 @@
+.my-bar span 
+		{
+			margin:5% !important;
+		}
+		
+.my-padding-32 {
+    padding-top: 32px!important;
+    padding-bottom: 32px!important
+}
+ .myfooter
+		{
+			background-color: rgba(0,0,0,0.8);
+			text-align: center;
+			font-size: 20px;
+			font-family: 'Marmelad',sans-serif;
+			padding-top: 10%;
+			background-color: #00001a;
+		}
+		
+.my-text-white,
+.my-hover-text-white:hover {
+    color: #fff!important
+}
+.my-third img
+		{
+			height: 200px;
+			width: 300px;
+		}
+.modal-content
+		{
+			z-index: 1000;
+            max-width: 100%;
+            margin-right:3%;
+            margin-left: 3%; 
+            max-height: 500px;
+            padding: 10px;
+            top: 20px;
+            font-size: 13px;
+        }
+		.content
+		{
+			margin:1% 2% 1% 4%;
+			text-align: left;
+			font-family: 'Changa',cursive;
+
+		}
+		.content .about
+		{
+			font-size: 10px;
+		}
+		.content i
+		{
+			padding: 0 !important;
+		
+		}
+		.content .about
+		{
+			font-size: 17px;
+		}
+		.social-icons {
+			text-align: center;
+			}  
+		  .social-icons li {
+			display:inline-block;
+			list-style-type:none;
+			-webkit-user-select:none;
+			-moz-user-select:none;
+			}
+		  .social-icons li a {
+			border-bottom: none;
+			}
+		  .social-icons li img {
+			width:50px;
+			height:50px;
+			margin-right: 20px;
+		  }

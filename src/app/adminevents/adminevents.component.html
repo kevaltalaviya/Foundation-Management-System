@@ -1,0 +1,37 @@
+<app-adminheader></app-adminheader>
+
+<fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color: #032559;color:white;">
+    <h3 style="text-align: center" class="formheadings">
+          <b>Upcoming Blood Camp...</b>  
+        </h3>
+
+    </fieldset>
+<hr>
+<div class="container" >
+    <div class="center">
+        <a routerLink="/adminaddevents" routerLinkActive="active">
+             <button  type="button" class="btn btn-success"style="margin: 0 35%" id="btndonation">ADD CAMP</button>
+            </a>
+    </div>
+
+  </div>
+  <br><div style="text-align: center"><h1>CAMPAIGN DETAILS</h1></div><hr>
+
+  <div *ngFor="let bloodCamp of bloodCamps">
+  <div class="container" style="background-color: grey;">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" >
+          <fieldset style="background-color:pink;">
+
+        <b> <h1 style="text-align: center;"> {{ bloodCamp.camp_title }}</h1></b><br/>
+             <h4 style="text-align: center;"><b>Camp Date :</b>{{ bloodCamp.camp_date }} </h4>
+             <h4 style="text-align: center;"><b>Camp Address :</b> {{ bloodCamp.camp_address }}</h4>
+            </fieldset>
+
+      </div>
+  </div>
+  </div>
+  <br>
+  <hr/>
+</div>
+

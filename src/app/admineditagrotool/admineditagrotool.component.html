@@ -1,0 +1,54 @@
+<app-adminheader></app-adminheader>
+
+    <fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color: #032559;color:white;">
+        <h3 style="text-align: center" class="formheadings">
+              <b>  Enter Updated Data Of Tool   </b>  
+            </h3>
+    
+        </fieldset>
+    <hr>
+    <div class="container " >
+        <form [formGroup]="agroForm" novalidate>
+                <table class="table table-bordered table-striped">
+                        <tr>
+            
+                            <th>Fields</th>
+                            <th>Data</th>
+                            
+                        </tr>
+                        <tr>
+                            <td>Name of tool</td>
+                            <td><input type="text" [(ngModel)]="agroTool.tool_name" class="form-control" formControlName="tool_name" #tool_name/></td>
+                        </tr>
+                        <tr>
+                            <td>MRP</td>
+                            <td><input type="number" [(ngModel)]="agroTool.tool_mrp" min="0" class="form-control" formControlName="tool_mrp" #tool_mrp/></td>
+                        </tr>
+                        <tr>
+                            <td>Discount</td>
+                            <td><input type="number" [(ngModel)]="agroTool.tool_discount" min="0" max="90"class="form-control" formControlName="tool_discount" #tool_discount/></td>
+                        </tr>
+                        <tr>
+                            <td>Selling Price </td>
+                            <td><input type="number" [(ngModel)]="agroTool.tool_sell_price" min="0"class="form-control" formControlName="tool_sell_price" #tool_sell_price/></td>
+                        </tr>
+                        <tr>
+                            <td>Address</td>
+                            <td><textarea name="Address" [(ngModel)]="agroTool.tool_address" class="form-control" formControlName="tool_address" #tool_address></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Photo</td>
+                            <td><img src="{{imgurl}}"  style="width: 250px;height: 200px;">
+                                <input type="file" (change)="handleFileInput($event.target.files)" formControlName="tool_photo" #tool_photo/>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="form-group">
+                        <button (click)="updateAgroTool(tool_name.value,tool_mrp.value,tool_discount.value,
+                        tool_sell_price.value,tool_address.value)"
+                        [disabled]="agroForm.invalid" 
+                        class="btn btn-success"style="margin: 0 40%" id="btndonation">Update AgroTool</button>
+                      </div>
+        </form>
+    </div>
+    <hr>

@@ -1,0 +1,42 @@
+<app-header></app-header>
+  <br><div style="text-align: center"><h1>CAMPAIGN DETAILS</h1></div><hr>
+  <div *ngFor="let agroTool of agroTools,even as e">
+    <div *ngIf="e; then thenblock else elseblock"></div>
+  <ng-template #thenblock>
+    <div class="container">
+      <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-6 clo-lg-6">
+              <img src="{{agroTool.tool_photo}}" class="center" style="height:100%;width:100%;margin-top: 10px;">
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-6 clo-lg-6">
+            <fieldset style="background-color:pink;border:solid 3px">
+          <b> <h1 style="text-align: center;">{{ agroTool.tool_name }}</h1></b>
+          <h4><b>Tool Price :</b>{{ agroTool.tool_mrp }}  </h4>
+          <h4><b>Tool Discount :</b>{{ agroTool.tool_discount }} </h4>
+          <h4><b>Sell Price :</b>{{ agroTool.tool_sell_price }}</h4>
+          <h4><b>Address :</b>{{ agroTool.tool_address }}</h4>
+          </fieldset>
+            </div>
+    </div>
+    </div>
+    </ng-template>
+    <ng-template #elseblock>
+        <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-6 clo-lg-6">
+                  <fieldset style="background-color:pink;border:solid 3px">
+                <b> <h1 style="text-align: center;">{{ agroTool.tool_name }}</h1></b>
+                <h4><b>Tool Price :</b>{{ agroTool.tool_mrp }}  </h4>
+                <h4><b>Tool Discount :</b>{{ agroTool.tool_discount }} </h4>
+                <h4><b>Sell Price :</b>{{ agroTool.tool_sell_price }}</h4>
+                <h4><b>Address :</b>{{ agroTool.tool_address }}</h4>
+                </fieldset>
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6 clo-lg-6">
+                      <img src="{{agroTool.tool_photo}}"class="center" style="height:100%;width:100%;margin-top: 10px; ">
+                </div>
+          </div>
+          </div>
+          </ng-template>
+  </div>
+  <app-footer></app-footer>

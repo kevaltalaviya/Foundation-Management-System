@@ -1,0 +1,33 @@
+<app-adminheader></app-adminheader>
+
+<br>
+
+        <fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color: #032559;color:white;">
+		    <h3 style="text-align: center" class="formheadings">
+              <b>  Scholarship Application For Approval   </b>  
+            </h3>
+  
+        </fieldset>
+	<hr>
+	<div class="container" >
+		<table class="table table-bordered table-striped table-hover">
+			<tr>
+
+				
+				<th>Name</th>
+				<th>email</th>
+				<th>mobile</th>
+				<th>Marksheet</th>
+				<th>approval</th>
+			</tr>
+			<tr *ngFor="let scholarship of scholarships" >
+						<td *ngIf="!scholarship.approve">{{scholarship.firstname}} </td>
+						<td *ngIf="!scholarship.approve">{{scholarship.email}}</td>
+						<td *ngIf="!scholarship.approve">{{scholarship.mobile_no}}</td>
+						<td *ngIf="!scholarship.approve"><img src="{{scholarship.marksheet}}"  style="width: 250px;height: 200px;"></td>
+						<td *ngIf="!scholarship.approve">
+							<a (click)="approveST(scholarship._id,scholarship.email)" class="btn btn-danger">approve</a></td>
+		
+			</tr>
+		</table>
+		

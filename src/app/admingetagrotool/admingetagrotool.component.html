@@ -1,0 +1,41 @@
+<app-adminheader></app-adminheader>
+
+<div class="container" >
+    <div class="center">
+        <a routerLink="/adminagrotools" routerLinkActive="active">
+             <button  type="button" class="btn btn-success"style="margin: 0 35%" id="btndonation">Add tool</button>
+        </a>
+    </div>
+  </div>
+<br/>
+<fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color: #032559;color:white;">
+    <h3 style="text-align: center" class="formheadings">
+          <b> Available Agriculture Tools...</b>  
+        </h3>
+
+    </fieldset>
+<hr/>
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Discount</th>
+        <th>Sell Price</th>
+        <th>Address</th>
+        <th>Photo</th>
+        
+        <th colspan="2">Actions</th>
+    </tr>
+    </thead>
+        <tr *ngFor="let agroTool of agroTools">
+            <td>{{ agroTool.tool_name }}</td>
+            <td>{{ agroTool.tool_mrp }}</td>
+            <td>{{ agroTool.tool_discount }}</td>
+            <td>{{ agroTool.tool_sell_price }}</td>
+            <td>{{ agroTool.tool_address }}</td>
+            <td><img src="{{agroTool.tool_photo}}"  style="width: 250px;height: 200px;"></td>
+            <td><a [routerLink]="['/admineditagrotool/edit', agroTool._id]" class="btn btn-primary">Edit</a></td>
+            <td><a (click)="deleteAgroTool(agroTool._id)" class="btn btn-danger">Delete</a></td>
+        </tr>
+  </table>

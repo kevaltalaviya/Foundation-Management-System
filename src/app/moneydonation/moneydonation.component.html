@@ -1,0 +1,88 @@
+    <app-header></app-header>
+    <fieldset style="border: 2px groove;border-radius: 5px;padding-top: 4px; margin: 0 5%;background-color:  #032559;color:white;">
+    <h3  class="formheadings" style="text-align: center;">
+          <b>  Money Donation Form For SEVA Foundation </b>    
+        </h3>
+    </fieldset>
+
+<hr>
+<form [formGroup]="moneydonationForm" novalidate>
+    <fieldset style="border: 2px groove;margin: 0 5%;border-radius: 5px;">
+    <div class="formDiv form-group">
+        <fieldset style="background-color: #032559;border-radius: 5px;padding-top: 4px;color:white;"><h3 style="text-align: center;" class="formheadings" >General Information
+        </h3></fieldset>
+        <br>
+    <div class="container form-group">
+        <div class="row">
+            <div class="col">
+                First Name:<span style="color:#ff0000">*</span>
+                <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="text" class="form-control" formControlName="firstname" #firstname></div>
+            <div class="col">
+                middle Name:<span style="color:#ff0000">*</span>
+                <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="text" class="form-control" formControlName="middlename" #middlename/></div>
+            <div class="col">
+                Last Name:<span style="color:#ff0000">*</span>
+                <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="text" class="form-control" formControlName="lastname" #lastname></div><br/>
+        </div>
+    </div>
+    <br>
+        <div class="container form-group">
+            <div class="row">
+                <div class="col">
+                    E-mail:
+                    <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="email" class="form-control" formControlName="email" #email></div>
+                <div class="col">
+                    Mobile Number:<span style="color:#ff0000">*</span>
+                    <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="tel" minlength="10" maxlength="10" class="form-control" formControlName="mobile_no" #mobile_no></div>
+            </div>
+        </div>
+</div>
+</fieldset>
+<br>
+<fieldset style="border: 2px groove;border-radius: 5px;margin: 0 5%;">
+    <div class="formDiv form-group">
+            <fieldset style="background-color: #032559;border-radius: 5px;color:white;padding-top: 4px;"><h3 style="text-align: center" class="formheadings" >Bank Information
+            </h3></fieldset>
+        <br>
+    <div class="container form-group">
+            <div class="row">		
+                <div class="col">
+                    <div>Bank_name:<span style="color:#ff0000">*</span>
+                    <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="tel" minlength="3" maxlength="6" class="form-control" formControlName="bank_name" #bank_name></div>
+                </div>
+                <div class="col">
+                        <div>Account numbers:<span style="color:#ff0000">*</span>
+                        <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="tel" minlength="6" maxlength="6" class="form-control" formControlName="account_no" #account_no></div>
+                </div>
+            </div>
+    </div>	
+        <br>
+    <div class="container form-group">
+        <div class="row">		
+            <div class="col">
+                <div>IFSC no:<span style="color:#ff0000">*</span>
+                    <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="text" class="form-control" formControlName="IFSC_no" #IFSC_no></div>
+            </div>
+            <div class="col">
+                <div > Amount To Donate:<span style="color:#ff0000">*</span>
+                <input style="border: 2px groove;border-radius: 5px;" class="inputfields" type="number" class="form-control" formControlName="amount" #amount></div>
+           </div>
+    </div>
+    </div>
+    </div>
+</fieldset>
+
+
+<br/>
+<br/>
+<div class="form-group">
+    <button (click)="addMoney(firstname.value, middlename.value, lastname.value,email.value,
+    mobile_no.value,bank_name.value,account_no.value,IFSC_no.value,amount.value)"
+    [disabled]="moneydonationForm.pristine || moneydonationForm.invalid" 
+    class="btn btn-success"style="margin: 0 40%" id="btndonation">
+    Donate Now		 
+</button>
+</div>
+</form>
+<br/>
+<app-footer></app-footer>
